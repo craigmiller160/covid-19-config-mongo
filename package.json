@@ -1,0 +1,21 @@
+{
+  "name": "@craigmiller160/covid-19-config-mongo",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "node scripts/build"
+  },
+  "dependencies": {
+    "cloud-config-client": "^1.5.2",
+    "mongodb": "^3.5.8",
+    "retry": "^0.12.0",
+    "shell-env": "^3.0.0"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0"
+  }
+}
