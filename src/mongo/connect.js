@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const logger = require('../utils/logger');
 
 const getConfig = async () => {
-    if (process.env.USE_CONFIG_SERVER) {
+    if (process.env.USE_CONFIG_SERVER.toLowerCase() === 'true') {
         const { cloudConfig, MONGO_HOST, MONGO_AUTH_DB, MONGO_PASS, MONGO_USER, MONGO_PORT } = require('../config');
         await cloudConfig.init();
         const mongoUser = cloudConfig.config[MONGO_USER];
