@@ -21,7 +21,7 @@ const getConfig = async () => {
         };
     } else {
         const mongoUser = process.env.MONGO_USER;
-        const mongoPass = process.env.MONGO_PASS;
+        const mongoPass = process.env.MONGO_PASSWORD;
         const mongoAuthDb = process.env.MONGO_AUTH_DB;
         const mongoHost = process.env.MONGO_HOST;
         const mongoPort = process.env.MONGO_PORT;
