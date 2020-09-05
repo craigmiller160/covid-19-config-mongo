@@ -1,6 +1,7 @@
 {
   "name": "@craigmiller160/covid-19-config-mongo",
   "version": "1.3.0-beta",
+  "author": "craigmiller160",
   "main": "lib/index.js",
   "license": "MIT",
   "files": [
