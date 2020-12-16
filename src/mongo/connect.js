@@ -17,6 +17,9 @@
  */
 
 const { MongoClient } = require('mongodb');
+const handleMongoPasswordEnv = require('./handleMongoPasswordEnv');
+
+handleMongoPasswordEnv();
 
 const logger = require('../utils/logger');
 
