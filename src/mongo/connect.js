@@ -70,7 +70,7 @@ const connect = async (handler) => {
     const profile = process.env.ACTIVE_PROFILE;
     const mongoDb = `${dbName}_${profile}`;
 
-    const mongoConnectionString = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoDb}?authSource=${mongoAuthDb}`;
+    const mongoConnectionString = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoDb}?authSource=${mongoAuthDb}&tls=true&tlsAllowInvalidCertificates=true&tlsAllowInvalidHostnames=true`;
     const options = {
         useUnifiedTopology: true
     };
