@@ -1,6 +1,9 @@
 {
   "name": "@craigmiller160/covid-19-config-mongo",
   "version": "1.3.0-beta",
+  "publishConfig": {
+    "registry": "http://craigpc:30003/repository/npm-private/"
+  },
   "author": "craigmiller160",
   "main": "lib/index.js",
   "license": "MIT",
