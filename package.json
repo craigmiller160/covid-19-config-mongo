@@ -1,8 +1,8 @@
 {
   "name": "@craigmiller160/covid-19-config-mongo",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "publishConfig": {
-    "registry": "http://craigpc:30003/repository/npm-private/"
+    "registry": "https://craigmiller160.ddns.net:30003/repository/npm-private/"
   },
   "author": "craigmiller160",
   "main": "lib/index.js",
