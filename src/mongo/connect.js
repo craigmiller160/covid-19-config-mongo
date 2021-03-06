@@ -82,7 +82,7 @@ const buildMongoConnectionString = async () => {
 };
 
 const connect = async (handler) => {
-    const mongoConnectionString = buildMongoConnectionString();
+    const mongoConnectionString = await buildMongoConnectionString();
     const options = {
         useUnifiedTopology: true
     };
