@@ -57,7 +57,7 @@ const getConfig = async () => {
     }
 };
 
-const connect = async (handler) => {
+const buildMongoConnectionString = async () => {
     const {
         mongoUser,
         mongoPass,
@@ -70,7 +70,19 @@ const connect = async (handler) => {
     const profile = process.env.ACTIVE_PROFILE;
     const mongoDb = `${dbName}_${profile}`;
 
-    const mongoConnectionString = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoDb}?authSource=${mongoAuthDb}&tls=true&tlsAllowInvalidCertificates=true&tlsAllowInvalidHostnames=true`;
+    const credsString = `${mongoUser}:${mongoPass}@`
+    const coreConnectString = `${mongoHost}:${mongoPort}/${mongoDb}?authSource=${mongoAuthDb}`;
+    const tlsString = `&tls=true&tlsAllowInvalidCertificates=true&tlsAllowInvalidHostnames=true`;
+
+    if (profile === 'test') {
+        return `mongodb://${coreConnectString}`;
+    }
+
+    return `mongodb://${credsString}${coreConnectString}${tlsString}`;
+};
+
+const connect = async (handler) => {
+    const mongoConnectionString = await buildMongoConnectionString();
     const options = {
         useUnifiedTopology: true
     };
